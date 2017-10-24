@@ -1,0 +1,61 @@
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"
+  integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="
+  crossorigin="anonymous"></script>
+
+<script>
+$(document).ready(function() {
+ // console.log($('.page-desc'));
+//$('.page-desc').css('opacity', 0);
+  var subtitles = [
+    {
+      text:'Welcome to the tropical source of our organic cocoa beans. The beans are harvested, fermented, and dried here in Costa Rica, then shipped to our bean-to-bar partner in the USA where they are produced with organic sugar into bars.',
+      timeToDisplay: 1000
+    },
+    {
+      text:'Chocolate comes from the seeds of the cacao fruit tree, which originated in the Americas, and grows exclusively in the tropics. The cacao tree’s Latin name, Theobroma Cacao, means “Food of the gods.” Both the Mayans and Aztecs believed that cacao beans had magical, or even divine, properties and used them in sacred rituals, as a medicinal cure, and for holiday celebrations',
+      timeToDisplay: 1000
+    },
+  ];
+
+  $('.content').remove();
+
+  setTimeout(function() {
+    $('.page-title').animate({opacity: 0}, 5000);
+  }, 5000);
+
+  setTimeout(function() {
+   $('.page-desc *').animate({opacity: 0}, 5000);
+  }, 10000);
+
+  // var playSubtitles = function() {
+  //   for (var i = 0; i < subtitles.length; i++) {
+  //     var currentTextObj = subtitles[i];
+  //     //console.log(currentTextObj);
+  //     var $text = $('<div>' + subtitles[i].text + '</div>')
+  //     if (i === 0) {
+  //       $('.page-desc').append($text).css({opacity: 1}, 1500);
+  //     }
+
+  //     setTimeout(function() {
+  //       $('.page-desc').animate({opacity: 0}, 1500, 'swing', function() {
+  //         $('.page-desc *').empty();
+  //         $('.page-desc').append($text).css({opacity: 1}, 1500);
+  //       });
+
+
+  //     }, currentTextObj.timeToDisplay);
+
+  //   }
+  // };
+
+  //playSubtitles();
+
+
+});
+</script>
