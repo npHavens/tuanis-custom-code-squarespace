@@ -33,12 +33,41 @@ $(document).ready(function() {
    $('.page-desc *').animate({opacity: 0}, 5000);
   }, 10000);
 
-  var $video = $('<div class=><iframe width="560" height="315" src="https://www.youtube.com/embed/yCSAPeSs_wY?autoplay=1" frameborder="0" allowfullscreen</iframe>')
+  var $video = $('<div class="video"><iframe width="560" height="315" src="https://www.youtube.com/embed/yCSAPeSs_wY?autoplay=1" frameborder="0" allowfullscreen</iframe>')
 
-   var $banner =  $('#banner-wrapper');
-   $banner.after($video);
-   $video.hide();
+  var $banner =  $('#banner-wrapper');
+  var $spacer = $('<div></div>');
 
+  var str = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/;
+  var isMobile = str.test(navigator.userAgent);
+
+  if (!isMobile) {
+     $('#header').after($video);
+    $video.hide();
+  } else {
+     $('#header').after($video).after($spacer);
+     $banner.hide();
+  }
+
+  $video.css({
+    'position': 'relative',
+    'padding-bottom': '56.25%',
+    'padding-top': '25px',
+    'height': 0
+ });
+
+  $('.video iframe').css({
+    'position': 'absolute',
+    'top': 0,
+    'left': 0,
+    'width': '100%',
+    'height': '100%'
+ });
+
+  $spacer.css({
+   'height': '10em',
+   'background-color': '#3c342f'
+ });
   // var playSubtitles = function() {
   //   for (var i = 0; i < subtitles.length; i++) {
   //     var currentTextObj = subtitles[i];
