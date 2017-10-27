@@ -33,6 +33,12 @@ $(document).ready(function() {
    $('.page-desc *').animate({opacity: 0}, 5000);
   }, 10000);
 
+  var $video = $('<div class=><iframe width="560" height="315" src="https://www.youtube.com/embed/yCSAPeSs_wY?autoplay=1" frameborder="0" allowfullscreen</iframe>')
+
+   var $banner =  $('#banner-wrapper');
+   $banner.after($video);
+   $video.hide();
+
   // var playSubtitles = function() {
   //   for (var i = 0; i < subtitles.length; i++) {
   //     var currentTextObj = subtitles[i];
